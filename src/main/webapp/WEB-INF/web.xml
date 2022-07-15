@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+
+    <!-- ======================================================================================= ADMIN SERVLET ======-->
+    <servlet>
+        <servlet-name>AdminServlet</servlet-name>
+        <servlet-class>hr.lcabraja.webshop.servlet.AdminServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AdminServlet</servlet-name>
+        <url-pattern>/admin</url-pattern>
+    </servlet-mapping>
+
+    <!-- ======================================================================================== AUTH SERVLET ======-->
+    <servlet>
+        <servlet-name>AuthServlet</servlet-name>
+        <servlet-class>hr.lcabraja.webshop.servlet.AuthServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AuthServlet</servlet-name>
+        <url-pattern>/AuthServlet/*</url-pattern>
+    </servlet-mapping>
+
+    <!-- ======================================================================================== CART SERVLET ======-->
+    <servlet>
+        <servlet-name>CartServlet</servlet-name>
+        <servlet-class>hr.lcabraja.webshop.servlet.CartServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CartServlet</servlet-name>
+        <url-pattern>/cart/*</url-pattern>
+    </servlet-mapping>
+
+    <!-- ==================================================================================== CHECKOUT SERVLET ======-->
+    <servlet>
+        <servlet-name>CheckoutServlet</servlet-name>
+        <servlet-class>hr.lcabraja.webshop.servlet.CheckoutServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CheckoutServlet</servlet-name>
+        <url-pattern>/checkout-perform</url-pattern>
+    </servlet-mapping>
+
+    <!-- ============================================================================= EXECUTE PAYMENT SERVLET ======-->
+    <servlet>
+        <servlet-name>ExecutePaymentServlet</servlet-name>
+        <servlet-class>hr.lcabraja.webshop.servlet.ExecutePaymentServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ExecutePaymentServlet</servlet-name>
+        <url-pattern>/execute_payment/*</url-pattern>
+    </servlet-mapping>
+    <!-- ======================================================================================== INIT SERVLET ======-->
+    <servlet>
+        <servlet-name>InitServlet</servlet-name>
+        <servlet-class>hr.lcabraja.webshop.servlet.InitServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>InitServlet</servlet-name>
+        <url-pattern>/InitServlet</url-pattern>
+    </servlet-mapping>
+
+    <!-- ================================================================================ ORDER DETAIL SERVLET ======-->
+    <servlet>
+        <servlet-name>OrderDetailServlet</servlet-name>
+        <servlet-class>hr.lcabraja.webshop.servlet.OrderDetailServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>OrderDetailServlet</servlet-name>
+        <url-pattern>/orders</url-pattern>
+    </servlet-mapping>
+
+    <!-- ===================================================================================== PRODUCT SERVLET ======-->
+    <servlet>
+        <servlet-name>ProductServlet</servlet-name>
+        <servlet-class>hr.lcabraja.webshop.servlet.ProductServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ProductServlet</servlet-name>
+        <url-pattern>/products</url-pattern>
+    </servlet-mapping>
+
+    <!-- ============================================================================== REVIEW PAYMENT SERVLET ======-->
+    <servlet>
+        <servlet-name>ReviewPaymentServlet</servlet-name>
+        <servlet-class>hr.lcabraja.webshop.servlet.ReviewPaymentServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ReviewPaymentServlet</servlet-name>
+        <url-pattern>/review_payment</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>NewProductServlet</servlet-name>
+        <servlet-class>hr.lcabraja.webshop.servlet.NewProduct</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>NewProductServlet</servlet-name>
+        <url-pattern>/admin/servlet/newproduct</url-pattern>
+    </servlet-mapping>
+    <!-- ============================================================================================= FILTERS ======-->
+    <filter>
+        <filter-name>AdminFilter</filter-name>
+        <filter-class>hr.lcabraja.webshop.filter.AdminFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>AdminFilter</filter-name>
+        <url-pattern>/admin/*</url-pattern>
+    </filter-mapping>
+
+    <filter>
+        <filter-name>AuthFilter</filter-name>
+        <filter-class>hr.lcabraja.webshop.filter.AuthFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>AuthFilter</filter-name>
+        <url-pattern>/checkout.jsp</url-pattern>
+    </filter-mapping>
+
+    <!-- ============================================================================================= WELCOME ======-->
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
+</web-app>
